@@ -1,0 +1,24 @@
+<h1>READ</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Rollno</th>
+        <th>Name</th>
+        <th><b>UPDATE</b></th>
+        <th><b>DELETE</b></th>
+    </tr>
+    
+    <tr *ngFor="let item of items">
+        <td>{{item.payload.doc.id}}</td>
+        <td>{{item.payload.doc.data().rollno}}</td>
+        <td>{{item.payload.doc.data().name}}</td>
+        <td (click)="UpdateSTUD(item.payload.doc.id,item.payload.doc.data().rollno,item.payload.doc.data().name)" routerLink="update">edit</td>
+        <td (click)="DeleteSTUD(item.payload.doc.id)">delete</td>
+    </tr>
+</table>
+<br>
+<hr>
+<br>
+
+<router-outlet></router-outlet>
